@@ -64,7 +64,7 @@ public class Menu {
                         System.out.println("Arreglo desordenado");
                         arregloRamdom.impresion(arreglo);
                         System.out.println("Arreglo Ordeando");
-                        recursion.orden(arreglo, n);
+                        recursion.orden(arreglo,n);
                         arregloRamdom.impresion(arreglo);
                         break;
                     case 7:

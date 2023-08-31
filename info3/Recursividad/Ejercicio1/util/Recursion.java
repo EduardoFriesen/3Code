@@ -51,7 +51,7 @@ public class Recursion {
         return resultado;
     }
 
-    static void orden(int arr[], int n)
+    void orden(int arr[], int n)
     {
         if (n == 1)
             return;
