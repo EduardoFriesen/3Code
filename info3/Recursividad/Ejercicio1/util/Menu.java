@@ -1,8 +1,9 @@
 package Recursividad.Ejercicio1.util;
 import java.util.*;
 public class Menu {
-    public void menu(){
+    public void menu() throws Exception{
         int op,n,b,resultado;
+        String binario="";
         randomArray arregloRamdom = new randomArray();
         try (Scanner teclado = new Scanner(System.in)) {
             Recursion recursion = new Recursion();
@@ -58,12 +59,19 @@ public class Menu {
                         System.out.println("--------------ORGANIZADOR-------------");
                         System.out.println("Ingrese el tamaño del arreglo");
                         n = teclado.nextInt();
-                        System.out.println("Ingrese el rangp de valores del arrglo");
-                        b = teclado.nextInt();
                         int[] arreglo = new int[n];
-                        arreglo = arregloRamdom.carga(n, b);
+                        arreglo = arregloRamdom.carga(n);
+                        System.out.println("Arreglo desordenado");
+                        arregloRamdom.impresion(arreglo);
+                        System.out.println("Arreglo Ordeando");
+                        recursion.orden(arreglo, n);
                         arregloRamdom.impresion(arreglo);
                         break;
+                    case 7:
+                        System.out.println("--------------BINARIO-------------");
+                        System.out.println("Ingrese el valor a convertir: ");
+                        n = teclado.nextInt();
+                        resultado = recursion.binario(n, binario);
                 }   
             }while(op!=0);
         }

@@ -4,7 +4,7 @@
 
 using namespace std;
 
-#define ERROR pow(10, -8);
+#define ERROR pow(10, -4);
 
 void menu();
 double f(double x);
@@ -15,6 +15,7 @@ void regula();
 void puntoFijo();
 void newtonRaphson();
 void secante();
+void gaussiana();
 
 
 int main(){
@@ -23,7 +24,7 @@ int main(){
 }
 
 double f(double x){
-    return x = log(x)+exp(sin(x))-x;
+    return x = -2 + (7*x) - (5*pow(x,2)) + (6*pow(x,3));
 }
 
 double g(double x){
@@ -41,6 +42,7 @@ void menu(){
             cout<<"Ingresar Opcion"<< endl;
             cout<<"1. Metodos Cerrados"<< endl;
             cout<<"2. Metodos Abiertos"<< endl;
+            cout<<"3. Sistemas de Ecuaciones Algebraicas Lineales"<<endl;
             cout<<"0. Salir"<< endl;
             cin>>op;
             switch (op){
@@ -87,6 +89,21 @@ void menu(){
                         case 3:
                             secante();
                             break;
+                    }
+                    break;
+                case 3:
+                    cout<<"--Sistemas de Ecuaciones Algebraicas Lineales--"<<endl;
+                    cout<<"Ingresar Opcion"<< endl;
+                    cout<<"1. Metodo de Eliminacion Gaussiana"<< endl;
+                    cin>>op;
+                    switch (op){
+                        case 0:
+                            cout<<"Hasta la proxima"<<endl;
+                            break;
+                        case 1:
+                            gaussiana();
+                            break;
+                        
                     }
                     break;
                 default:
@@ -269,3 +286,45 @@ void secante(){
 
     cout << "Raiz: "<< fixed << setprecision(20) << xNuevo << "\nError: " << eAproximado << "\nIteraciones: " << iteraciones << endl;
 }
+/*void gaussina(){
+
+    int tam;
+    double aux, factor;
+    double e = ERROR;
+    cout<<"Ingrese la cantidad de incognitas: ";
+    cin>>tam;
+    double matrizA[tam][tam];
+    double matrizB[tam];
+    double matrizX[tam];
+    for(int i=0;i<tam;i++){
+        for(int j=0;j<tam;j++){
+            cout<<"ingrese el valor de X"<<+(j)<<endl;
+            cin>>matrizA[i][j];
+            
+        }
+        cout<<"ingrese el valor de la ecuacion numero"<<+(i+1)<<endl;
+        cin>>matrizX[i];
+    }
+
+    //triangulacion superior
+    for(int indexA = 0; indexA<tam-1;indexA++){
+        //pivoteo
+        int swap = 0;
+        if(fabs(matrizA[indexA][indexA]) < e) {
+            for(int indexB = indexA + 1; indexB <= tam; indexB++){
+                    for (int indexC = indexA; indexC < tam; indexC++) {
+                        aux = matrizA[indexA][indexC];
+                        matrizA[indexA][indexC] = matrizA[indexB][indexC];
+                        matrizA[indexB][indexC] = aux;
+                    }
+                    aux = matrizB[indexA];
+                    matrizB[indexA] = matrizB[indexB];
+                    matrizB[indexB] = aux;
+                    swap = 1;
+                    break;
+                }
+            }
+        
+        }
+    }
+}*/
