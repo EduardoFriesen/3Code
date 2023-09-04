@@ -73,7 +73,7 @@ public class Ordenamientos {
         System.out.println("Iteraciones: " + itera);
     }  
     public void shellSortEnteros(int n){
-       int[] arreglo = new int[n];
+        int[] arreglo = new int[n];
         int i = 0;
         int temp;
         int itera = 0;
@@ -82,13 +82,14 @@ public class Ordenamientos {
         System.out.println("Arreglo Desordenado");
         carga.impresion(arreglo);
         long time = System.nanoTime();
-        int tam = (n/2)-1;
-        for(i = 0;i<tam;i++){
-            while(arreglo[i+tam] <= arreglo[i]){
+        int salto = (n/2)-1;
+        for(i = 0; (i+salto)<n ;i++){
+            while(arreglo[i+salto] < arreglo[i]){
                 temp = arreglo[i];
-                arreglo[i] = arreglo[i+1];
-                arreglo[i+tam] = temp;
+                arreglo[i] = arreglo[i+salto];
+                arreglo[i+salto] = temp;
                 if(i!=0) i--;
+                if(salto != 1) salto--;
             }
             itera++;
         }
@@ -96,4 +97,55 @@ public class Ordenamientos {
         System.out.println("Tiempo Transcurrido: " + time);
         System.out.println("Iteraciones: " + itera);
     }
+    public void shellSortDouble(int n){
+        double[] arreglo = new double[n];
+        int i = 0;
+        double temp;
+        int itera = 0;
+        randomArray carga = new randomArray();
+        arreglo = carga.cargaDoubles(n);
+        System.out.println("Arreglo Desordenado");
+        carga.impresionDouble(arreglo);
+        long time = System.nanoTime();
+        int salto = (n/2)-1;
+        for(i = 0; (i+salto)<n ;i++){
+            while(arreglo[i+salto] < arreglo[i]){
+                temp = arreglo[i];
+                arreglo[i] = arreglo[i+salto];
+                arreglo[i+salto] = temp;
+                if(i!=0) i--;
+                if(salto != 1) salto--;
+            }
+            itera++;
+        }
+        carga.impresionDouble(arreglo);
+        System.out.println("Tiempo Transcurrido: " + time);
+        System.out.println("Iteraciones: " + itera);
+    }
+    public void shellSortString(int n){
+        String[] arreglo = new String[n];
+        int i = 0;
+        String temp = "";
+        int itera = 0;
+        randomArray carga = new randomArray();
+        arreglo = carga.cargaString(n);
+        System.out.println("Arreglo Desordenado");
+        carga.impresionString(arreglo);
+        long time = System.nanoTime();
+        int salto = (n/2)-1;
+        for(i = 0; (i+salto)<n ;i++){
+            while(arreglo[i+salto].compareTo(arreglo[i]) > 0){
+                temp = arreglo[i];
+                arreglo[i] = arreglo[i+salto];
+                arreglo[i+salto] = temp;
+                if(i!=0) i--;
+                if(salto != 1) salto--;
+            }
+            itera++;
+        }
+        carga.impresionString(arreglo);
+        System.out.println("Tiempo Transcurrido: " + time);
+        System.out.println("Iteraciones: " + itera);
+    }
 }
+ 

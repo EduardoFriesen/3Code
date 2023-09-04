@@ -73,13 +73,13 @@ public class MenuOrden {
                                 System.out.println("\n----------SHELLSORT DOUBLE----------");
                                 System.out.println("Ingrese el tamaño del arreglo: ");
                                 n = teclado.nextInt();
-                                metodos.insercionDoubles(n);
+                                metodos.shellSortDouble(n);
                                 break;
                             case 3:
                                 System.out.println("\n----------SHELLSORT STRING----------");
                                 System.out.println("Ingrese el tamaño del arreglo: ");
                                 n = teclado.nextInt();
-                                metodos.insercionStrings(n);
+                                metodos.shellSortString(n);
                                 break;
                         }
                         break;
