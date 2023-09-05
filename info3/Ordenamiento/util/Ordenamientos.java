@@ -147,5 +147,125 @@ public class Ordenamientos {
         System.out.println("Tiempo Transcurrido: " + time);
         System.out.println("Iteraciones: " + itera);
     }
+    public void quickSortEnteros(int n){
+        randomArray carga = new randomArray();
+        int[] arreglo = new int[n];
+        int inicio = 0;
+        int fin = n-1;
+        arreglo = carga.cargaEnteros(n);
+        System.out.println("Arreglo Desordenado");
+        carga.impresion(arreglo);
+        quickSortInt(arreglo, inicio, fin);
+        System.out.println("Arreglo Ordenado");
+        carga.impresion(arreglo);
+
+    }
+    public void quickSortInt(int vec[], int inicio, int fin){
+        if(inicio>=fin) return;
+                int pivote=vec[inicio];
+                int elemIzq=inicio+1;
+                int elemDer=fin;
+                while(elemIzq<=elemDer){
+                        while(elemIzq<=fin && vec[elemIzq]<pivote){
+                                elemIzq++;
+                        }
+                        while(elemDer>inicio && vec[elemDer]>=pivote){
+                                elemDer--;
+                        }
+                        if(elemIzq<elemDer){
+                                int temp=vec[elemIzq];
+                                vec[elemIzq]=vec[elemDer];
+                                vec[elemDer]=temp;
+                        }
+                }
+                
+                if(elemDer>inicio){
+                        int temp=vec[inicio];
+                        vec[inicio]=vec[elemDer];
+                        vec[elemDer]=temp;
+                }
+                quickSortInt(vec, inicio, elemDer-1);
+                quickSortInt(vec, elemDer+1, fin);
+    }
+    public void quickSortDoubles(int n){
+        randomArray carga = new randomArray();
+        double[] arreglo = new double[n];
+        int inicio = 0;
+        int fin = n-1;
+        arreglo = carga.cargaDoubles(n);
+        System.out.println("Arreglo Desordenado");
+        carga.impresionDouble(arreglo);
+        quickSortDou(arreglo, inicio, fin);
+        System.out.println("Arreglo Ordenado");
+        carga.impresionDouble(arreglo);
+
+    }
+    public void quickSortDou(double vec[], int inicio, int fin){
+        if(inicio>=fin) return;
+                double pivote=vec[inicio];
+                int elemIzq=inicio+1;
+                int elemDer=fin;
+                while(elemIzq<=elemDer){
+                        while(elemIzq<=fin && vec[elemIzq]<pivote){
+                                elemIzq++;
+                        }
+                        while(elemDer>inicio && vec[elemDer]>=pivote){
+                                elemDer--;
+                        }
+                        if(elemIzq<elemDer){
+                                double temp=vec[elemIzq];
+                                vec[elemIzq]=vec[elemDer];
+                                vec[elemDer]=temp;
+                        }
+                }
+                
+                if(elemDer>inicio){
+                        double temp=vec[inicio];
+                        vec[inicio]=vec[elemDer];
+                        vec[elemDer]=temp;
+                }
+                quickSortDou(vec, inicio, elemDer-1);
+                quickSortDou(vec, elemDer+1, fin);
+    }
+    public void quickSortStrings(int n){
+        randomArray carga = new randomArray();
+        String[] arreglo = new String[n];
+        int inicio = 0;
+        int fin = n-1;
+        arreglo = carga.cargaString(n);
+        System.out.println("Arreglo Desordenado");
+        carga.impresionString(arreglo);
+        quickSortStr(arreglo, inicio, fin);
+        System.out.println("Arreglo Ordenado");
+        carga.impresionString(arreglo);
+
+    }
+    public void quickSortStr(String vec[], int inicio, int fin){
+        if(inicio>=fin) return;
+                String pivote=vec[inicio];
+                int elemIzq=inicio+1;
+                int elemDer=fin;
+                while(elemIzq<=elemDer){
+                        while(elemIzq<=fin && vec[elemIzq].compareTo(pivote) <= 0){
+                                elemIzq++;
+                        }
+                        while(elemDer>inicio && vec[elemDer].compareTo(pivote) > 0){
+                                elemDer--;
+                        }
+                        if(elemIzq<elemDer){
+                                String temp=vec[elemIzq];
+                                vec[elemIzq]=vec[elemDer];
+                                vec[elemDer]=temp;
+                        }
+                }
+                
+                if(elemDer>inicio){
+                        String temp=vec[inicio];
+                        vec[inicio]=vec[elemDer];
+                        vec[elemDer]=temp;
+                }
+                quickSortStr(vec, inicio, elemDer-1);
+                quickSortStr(vec, elemDer+1, fin);
+    }
 }
  

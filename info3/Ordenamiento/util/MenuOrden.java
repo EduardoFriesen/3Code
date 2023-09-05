@@ -84,10 +84,39 @@ public class MenuOrden {
                         }
                         break;
                     case 3:
-
+                        System.out.println("\n----------QUICKSORT----------");
+                        System.out.println("--------------Menu-------------");
+                        System.out.println("1 - Enteros");
+                        System.out.println("2 - Doubles");
+                        System.out.println("3 - Strings");
+                        System.out.println("0 - Salir \n");
+                        op = teclado.nextInt();
+                        switch(op){
+                            case 0:
+                                System.out.println("Hasta la Proxima");
+                                break;
+                            case 1:
+                                System.out.println("\n----------QUICKSORT ENTEROS----------");
+                                System.out.println("Ingrese el tamaño del arreglo: ");
+                                n = teclado.nextInt();
+                                metodos.quickSortEnteros(n);
+                                break;
+                            case 2:
+                                System.out.println("\n----------QUICKSORT DOUBLE----------");
+                                System.out.println("Ingrese el tamaño del arreglo: ");
+                                n = teclado.nextInt();
+                                metodos.quickSortDoubles(n);
+                                break;
+                            case 3:
+                                System.out.println("\n----------QUICKSORT STRING----------");
+                                System.out.println("Ingrese el tamaño del arreglo: ");
+                                n = teclado.nextInt();
+                                metodos.quickSortStrings(n);
+                                break;
+                        }  
                         break;
                     default:
-
+                        System.out.println("Opcion incorrecta");
                         break;
 
                 }
