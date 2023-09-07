@@ -15,8 +15,6 @@ void regula();
 void puntoFijo();
 void newtonRaphson();
 void secante();
-void gaussiana();
-
 
 int main(){
     menu();
@@ -286,45 +284,3 @@ void secante(){
 
     cout << "Raiz: "<< fixed << setprecision(20) << xNuevo << "\nError: " << eAproximado << "\nIteraciones: " << iteraciones << endl;
 }
-/*void gaussina(){
-
-    int tam;
-    double aux, factor;
-    double e = ERROR;
-    cout<<"Ingrese la cantidad de incognitas: ";
-    cin>>tam;
-    double matrizA[tam][tam];
-    double matrizB[tam];
-    double matrizX[tam];
-    for(int i=0;i<tam;i++){
-        for(int j=0;j<tam;j++){
-            cout<<"ingrese el valor de X"<<+(j)<<endl;
-            cin>>matrizA[i][j];
-            
-        }
-        cout<<"ingrese el valor de la ecuacion numero"<<+(i+1)<<endl;
-        cin>>matrizX[i];
-    }
-
-    //triangulacion superior
-    for(int indexA = 0; indexA<tam-1;indexA++){
-        //pivoteo
-        int swap = 0;
-        if(fabs(matrizA[indexA][indexA]) < e) {
-            for(int indexB = indexA + 1; indexB <= tam; indexB++){
-                    for (int indexC = indexA; indexC < tam; indexC++) {
-                        aux = matrizA[indexA][indexC];
-                        matrizA[indexA][indexC] = matrizA[indexB][indexC];
-                        matrizA[indexB][indexC] = aux;
-                    }
-                    aux = matrizB[indexA];
-                    matrizB[indexA] = matrizB[indexB];
-                    matrizB[indexB] = aux;
-                    swap = 1;
-                    break;
-                }
-            }
-        
-        }
-    }
-}*/
