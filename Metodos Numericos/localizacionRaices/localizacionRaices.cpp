@@ -22,12 +22,13 @@ int main(){
 }
 
 double f(double x){
-    return x = -2 + (7*x) - (5*pow(x,2)) + (6*pow(x,3));
+    return x = cos(sin(x))+x;
 }
 
 double g(double x){
-    return x = log(x+exp(sin(x)));
+    return x = sqrt(x) - 4;
 }
+
 
 double derivada(double x){
     return x;
@@ -99,7 +100,7 @@ void menu(){
                             cout<<"Hasta la proxima"<<endl;
                             break;
                         case 1:
-                            gaussiana();
+                            //gaussiana();
                             break;
                         
                     }
@@ -147,10 +148,11 @@ void biseccion(){
             iteracion++;
         }while(eAprox > t);
     cout<< fixed << setprecision(20) <<"La raiz de la funcion es: "<<cn<<endl;
-    cout<<"El error relativo es: "<<ePorcentual<<"%"<<endl;
+    cout<<"El error relativo es: "<<eAprox<<"%"<<endl;
+    cout<<"El error procentual es: "<<ePorcentual<<"%"<<endl;
     cout<<"Iteraciones: "<<iteracion<<endl;
     } else {
-        cout<<"No existe una raiz o existe un numero par de ellas";
+        cout<<"No existe una raiz o existe un numero par de ellas"<<endl;
     }
 }
 
@@ -191,7 +193,8 @@ void regula(){
             iteracion++;
         }while(eAprox > t);
     cout<< fixed << setprecision(20) <<"La raiz de la funcion es: "<<cn<<endl;
-    cout<<"El error relativo es: "<<ePorcentual<<"%"<<endl;
+    cout<<"El error relativo es: "<<eAprox<<"%"<<endl;
+    cout<<"El error procentual es: "<<ePorcentual<<"%"<<endl;
     cout<<"Iteraciones: "<<iteracion<<endl;
     } else {
         cout<<"No existe una raiz o existe un numero par de ellas";

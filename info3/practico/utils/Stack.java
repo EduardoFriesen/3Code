@@ -20,13 +20,13 @@ public class Stack<AnyType> {
     /**
      * Constructor
      */
-     public Stack(Integer size){
+    public Stack(Integer size){
         this.size = size;
         this.index = 0;
         this.array = (AnyType[]) new Object[size];
-     }
+    }
 
-     /**
+    /**
      * Agrega un elemento a la pila
      */
     public void push(AnyType elemt) throws Exception {

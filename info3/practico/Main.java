@@ -1,10 +1,8 @@
 package practico;
-import practico.utils.*;
-
+import practico.pilascolas.Menu;
 public class Main {
     public static void main(String[] args) throws Exception{
-        System.out.println(("Main class"));
-        PruebaPila prueba = new PruebaPila();
-        prueba.prueba();
+        Menu menu = new Menu();
+        menu.menu();
     }
 }
