@@ -3,17 +3,14 @@ package practico.utils;
 public class StackList<AnyType> {
 
     private Nodo<AnyType> root = null;
-    /**
-     * Indice del Array donde tenemos el ultimo elemento.
-     */
-    private Integer index;
+
     /**
      * Agrega el parametro a la pila
      * @param element
      */
     public void push(AnyType element){
         Nodo<AnyType> newNodo = new Nodo<AnyType>(element);
-        root.next = newNodo;
+        newNodo.next = root;
         root = newNodo;
     }
     /**

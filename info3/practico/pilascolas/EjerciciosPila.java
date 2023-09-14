@@ -81,9 +81,10 @@ public class EjerciciosPila {
     public void comprobacionEquilibrio() throws Exception{
         String expresion = "";
         int counter = 0;
-        Scanner teclado = new Scanner(System.in);
-        System.out.println("Ingrese la cadena deseada");
-        expresion = teclado.nextLine();
+        try (Scanner teclado = new Scanner(System.in)) {
+            System.out.println("Ingrese la cadena deseada");
+            expresion = teclado.nextLine();
+        }
         expresion = expresion.trim().toLowerCase();
         Stack<String> pila = new Stack<String>(expresion.length());
         for(int i = 0; i < expresion.length(); i++){
@@ -92,14 +93,12 @@ public class EjerciciosPila {
         for(int i = 0;i<expresion.length();i++){
             String valor = pila.pop();
             if(valor.compareTo(")") == 0){
-                System.out.println("se abre"+counter);
                 counter++;
             }
             if(counter <= 0){
                 System.out.println("Estan mal los patentesis");
             }else{
                 if(valor.compareTo("(") == 0){
-                    System.out.println("se cierra"+counter);
                     counter--;
                 }
             }
