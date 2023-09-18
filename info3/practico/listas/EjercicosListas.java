@@ -2,7 +2,6 @@ package practico.listas;
 
 import java.util.Scanner;
 
-import practico.utils.Stack;
 import practico.utils.StackList;
 
 public class EjercicosListas {
